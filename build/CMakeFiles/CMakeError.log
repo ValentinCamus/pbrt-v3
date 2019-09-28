@@ -1,0 +1,318 @@
+Performing C++ SOURCE FILE Test HAVE_DECLSPEC_NOINLINE failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7ec9d/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_7ec9d.dir/build.make CMakeFiles/cmTC_7ec9d.dir/build
+Building CXX object CMakeFiles/cmTC_7ec9d.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -Wno-deprecated-register -DHAVE_DECLSPEC_NOINLINE   -o CMakeFiles/cmTC_7ec9d.dir/src.cxx.o -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx:1:1: error: '__declspec' attributes are not enabled; use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
+__declspec(noinline) void foo() { }
+^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_7ec9d.dir/src.cxx.o] Error 1
+make: *** [cmTC_7ec9d/fast] Error 2
+
+Source file was:
+__declspec(noinline) void foo() { }
+int main() { }
+Performing C++ SOURCE FILE Test HAVE__ALIGNED_MALLOC failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_2baba/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_2baba.dir/build.make CMakeFiles/cmTC_2baba.dir/build
+Building CXX object CMakeFiles/cmTC_2baba.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -Wno-deprecated-register -DHAVE__ALIGNED_MALLOC   -o CMakeFiles/cmTC_2baba.dir/src.cxx.o -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'malloc.h' file not found
+#include <malloc.h>
+         ^~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_2baba.dir/src.cxx.o] Error 1
+make: *** [cmTC_2baba/fast] Error 2
+
+Source file was:
+
+#include <malloc.h>
+int main() { void * ptr = _aligned_malloc(1024, 32); }
+
+Performing C++ SOURCE FILE Test HAVE_MEMALIGN failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b9aba/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_b9aba.dir/build.make CMakeFiles/cmTC_b9aba.dir/build
+Building CXX object CMakeFiles/cmTC_b9aba.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -Wno-deprecated-register -DHAVE_MEMALIGN   -o CMakeFiles/cmTC_b9aba.dir/src.cxx.o -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx:2:10: fatal error: 'malloc.h' file not found
+#include <malloc.h>
+         ^~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_b9aba.dir/src.cxx.o] Error 1
+make: *** [cmTC_b9aba/fast] Error 2
+
+Source file was:
+
+#include <malloc.h>
+int main() {
+    void *ptr = memalign(32, 1024);
+} 
+Performing C++ SOURCE FILE Test HAVE_DECLSPEC_THREAD failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ae499/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_ae499.dir/build.make CMakeFiles/cmTC_ae499.dir/build
+Building CXX object CMakeFiles/cmTC_ae499.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -Wno-deprecated-register -DHAVE_DECLSPEC_THREAD   -o CMakeFiles/cmTC_ae499.dir/src.cxx.o -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx:2:1: error: '__declspec' attributes are not enabled; use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
+__declspec(thread) int x; int main() { }
+^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_ae499.dir/src.cxx.o] Error 1
+make: *** [cmTC_ae499/fast] Error 2
+
+Source file was:
+
+__declspec(thread) int x; int main() { }
+
+Determining if the include file syscall.h exists failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_009bf/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_009bf.dir/build.make CMakeFiles/cmTC_009bf.dir/build
+Building C object CMakeFiles/cmTC_009bf.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_009bf.dir/CheckIncludeFile.c.o   -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:10: fatal error: 'syscall.h' file not found
+#include <syscall.h>
+         ^~~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_009bf.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTC_009bf/fast] Error 2
+
+
+Determining if the include file ucontext.h exists failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_cda48/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_cda48.dir/build.make CMakeFiles/cmTC_cda48.dir/build
+Building C object CMakeFiles/cmTC_cda48.dir/CheckIncludeFile.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_cda48.dir/CheckIncludeFile.c.o   -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+In file included from /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.c:1:
+/usr/include/ucontext.h:43:2: error: The deprecated ucontext routines require _XOPEN_SOURCE to be defined
+#error The deprecated ucontext routines require _XOPEN_SOURCE to be defined
+ ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_cda48.dir/CheckIncludeFile.c.o] Error 1
+make: *** [cmTC_cda48/fast] Error 2
+
+
+Determining if the include file ext/slist exists failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0d09c/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0d09c.dir/build.make CMakeFiles/cmTC_0d09c.dir/build
+Building CXX object CMakeFiles/cmTC_0d09c.dir/CheckIncludeFile.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -Wno-deprecated-register    -o CMakeFiles/cmTC_0d09c.dir/CheckIncludeFile.cxx.o -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: 'ext/slist' file not found
+#include <ext/slist>
+         ^~~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_0d09c.dir/CheckIncludeFile.cxx.o] Error 1
+make: *** [cmTC_0d09c/fast] Error 2
+
+
+Determining if the include file tr1/unordered_map exists failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_a2278/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_a2278.dir/build.make CMakeFiles/cmTC_a2278.dir/build
+Building CXX object CMakeFiles/cmTC_a2278.dir/CheckIncludeFile.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -Wno-deprecated-register    -o CMakeFiles/cmTC_a2278.dir/CheckIncludeFile.cxx.o -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: 'tr1/unordered_map' file not found
+#include <tr1/unordered_map>
+         ^~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_a2278.dir/CheckIncludeFile.cxx.o] Error 1
+make: *** [cmTC_a2278/fast] Error 2
+
+
+Determining if the include file tr1/unordered_set exists failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_51ae0/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_51ae0.dir/build.make CMakeFiles/cmTC_51ae0.dir/build
+Building CXX object CMakeFiles/cmTC_51ae0.dir/CheckIncludeFile.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -Wno-deprecated-register    -o CMakeFiles/cmTC_51ae0.dir/CheckIncludeFile.cxx.o -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx:1:10: fatal error: 'tr1/unordered_set' file not found
+#include <tr1/unordered_set>
+         ^~~~~~~~~~~~~~~~~~~
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_51ae0.dir/CheckIncludeFile.cxx.o] Error 1
+make: *** [cmTC_51ae0/fast] Error 2
+
+
+Determining size of unsigned __int16 failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_b77d0/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_b77d0.dir/build.make CMakeFiles/cmTC_b77d0.dir/build
+Building C object CMakeFiles/cmTC_b77d0.dir/HAVE___UINT16.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc    -o CMakeFiles/cmTC_b77d0.dir/HAVE___UINT16.c.o   -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:25:12: error: expected ')'
+  ('0' + ((SIZE / 10000)%10)),
+           ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:25:12: note: to match this '('
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:26:12: error: expected ')'
+  ('0' + ((SIZE / 1000)%10)),
+           ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:26:12: note: to match this '('
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:27:12: error: expected ')'
+  ('0' + ((SIZE / 100)%10)),
+           ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:27:12: note: to match this '('
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:28:12: error: expected ')'
+  ('0' + ((SIZE / 10)%10)),
+           ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:28:12: note: to match this '('
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:29:12: error: expected ')'
+  ('0' +  (SIZE    % 10)),
+           ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:31: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                              ^
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:29:12: note: to match this '('
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:23:21: note: expanded from macro 'SIZE'
+#define SIZE (sizeof(unsigned __int16))
+                    ^
+5 errors generated.
+make[1]: *** [CMakeFiles/cmTC_b77d0.dir/HAVE___UINT16.c.o] Error 1
+make: *** [cmTC_b77d0/fast] Error 2
+
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CheckTypeSize/HAVE___UINT16.c:
+#include <sys/types.h>
+#include <stdint.h>
+#include <stddef.h>
+
+
+#undef KEY
+#if defined(__i386)
+# define KEY '_','_','i','3','8','6'
+#elif defined(__x86_64)
+# define KEY '_','_','x','8','6','_','6','4'
+#elif defined(__ppc__)
+# define KEY '_','_','p','p','c','_','_'
+#elif defined(__ppc64__)
+# define KEY '_','_','p','p','c','6','4','_','_'
+#elif defined(__aarch64__)
+# define KEY '_','_','a','a','r','c','h','6','4','_','_'
+#elif defined(__ARM_ARCH_7A__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','A','_','_'
+#elif defined(__ARM_ARCH_7S__)
+# define KEY '_','_','A','R','M','_','A','R','C','H','_','7','S','_','_'
+#endif
+
+#define SIZE (sizeof(unsigned __int16))
+char info_size[] =  {'I', 'N', 'F', 'O', ':', 's','i','z','e','[',
+  ('0' + ((SIZE / 10000)%10)),
+  ('0' + ((SIZE / 1000)%10)),
+  ('0' + ((SIZE / 100)%10)),
+  ('0' + ((SIZE / 10)%10)),
+  ('0' +  (SIZE    % 10)),
+  ']',
+#ifdef KEY
+  ' ','k','e','y','[', KEY, ']',
+#endif
+  '\0'};
+
+#ifdef __CLASSIC_C__
+int main(argc, argv) int argc; char *argv[];
+#else
+int main(int argc, char *argv[])
+#endif
+{
+  int require = 0;
+  require += info_size[argc];
+  (void)argv;
+  return require;
+}
+
+
+Determining if the function get_static_proc_name exists in the unwind failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_4d08c/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_4d08c.dir/build.make CMakeFiles/cmTC_4d08c.dir/build
+Building C object CMakeFiles/cmTC_4d08c.dir/CheckFunctionExists.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=get_static_proc_name   -o CMakeFiles/cmTC_4d08c.dir/CheckFunctionExists.c.o   -c /usr/local/Cellar/cmake/3.13.2/share/cmake/Modules/CheckFunctionExists.c
+Linking C executable cmTC_4d08c
+/usr/local/Cellar/cmake/3.13.2/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4d08c.dir/link.txt --verbose=1
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc  -DCHECK_FUNCTION_EXISTS=get_static_proc_name -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/cmTC_4d08c.dir/CheckFunctionExists.c.o  -o cmTC_4d08c -lunwind 
+ld: library not found for -lunwind
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+make[1]: *** [cmTC_4d08c] Error 1
+make: *** [cmTC_4d08c/fast] Error 2
+
+
+Performing C SOURCE FILE Test HAVE___DECLSPEC failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ef544/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_ef544.dir/build.make CMakeFiles/cmTC_ef544.dir/build
+Building C object CMakeFiles/cmTC_ef544.dir/src.c.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc   -DHAVE___DECLSPEC   -o CMakeFiles/cmTC_ef544.dir/src.c.o   -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.c
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.c:2:1: error: '__declspec' attributes are not enabled; use '-fdeclspec' or '-fms-extensions' to enable support for __declspec attributes
+__declspec(selectany) int a;
+^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_ef544.dir/src.c.o] Error 1
+make: *** [cmTC_ef544/fast] Error 2
+
+Source file was:
+
+__declspec(selectany) int a;
+int main(void) { return 0; }
+
+Performing C++ SOURCE FILE Test STL_NO_NAMESPACE failed with the following output:
+Change Dir: /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0af51/fast"
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -f CMakeFiles/cmTC_0af51.dir/build.make CMakeFiles/cmTC_0af51.dir/build
+Building CXX object CMakeFiles/cmTC_0af51.dir/src.cxx.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++    -std=c++11 -Wno-deprecated-register -DSTL_NO_NAMESPACE   -o CMakeFiles/cmTC_0af51.dir/src.cxx.o -c /Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx
+/Users/valentin/Desktop/Workspace/pbrt/build/CMakeFiles/CMakeTmp/src.cxx:3:1: error: no template named 'vector'; did you mean 'std::vector'?
+vector<int> t; int main() { }
+^~~~~~
+std::vector
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector:447:28: note: 'std::vector' declared here
+class _LIBCPP_TEMPLATE_VIS vector
+                           ^
+1 error generated.
+make[1]: *** [CMakeFiles/cmTC_0af51.dir/src.cxx.o] Error 1
+make: *** [cmTC_0af51/fast] Error 2
+
+Source file was:
+
+#include <vector>
+vector<int> t; int main() { }
+
