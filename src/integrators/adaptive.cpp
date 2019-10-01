@@ -95,7 +95,7 @@ void Statistics::UpdateStats(Point2i pixel, Spectrum &&L) {
     Spectrum &moment2 = statsPixel.moment2;
 
     // Welford's online algorithm
-    ++samples;
+    samples = samples + 1;
     Spectrum delta1 = L - mean;
     mean += delta1 / samples;
     Spectrum delta2 = L - mean;
@@ -107,11 +107,8 @@ Float Statistics::Sampling(const Pixel &statsPixel) const {
 }
 
 Spectrum Statistics::Variance(const Pixel &statsPixel) const {
-
-    if (statsPixel.samples < 2)
-        return 0;
-
-    return statsPixel.moment2 / statsPixel.samples - 1;
+    // No-biased variance
+    return (statsPixel.samples > 1) ? statsPixel.moment2 / statsPixel.samples : 0;
 }
 
 Spectrum Statistics::Error(const Pixel &statsPixel) const {

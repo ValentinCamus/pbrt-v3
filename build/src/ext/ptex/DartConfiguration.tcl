@@ -11,7 +11,7 @@ BuildDirectory: /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/ptex
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: MacBook-Pro-de-Valentin.local
+Site: macbook-pro-de-valentin.home
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Darwin-c++
@@ -36,7 +36,7 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake" "/Users/valentin/Desktop/Workspace/pbrt/src/ext/ptex"
+ConfigureCommand: "/usr/local/Cellar/cmake/3.13.2/bin/cmake" "/Users/valentin/Desktop/Workspace/pbrt/src/ext/ptex"
 MakeCommand: /usr/local/Cellar/cmake/3.13.2/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 

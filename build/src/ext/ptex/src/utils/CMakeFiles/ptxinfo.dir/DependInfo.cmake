@@ -11,7 +11,7 @@ set(CMAKE_CXX_COMPILER_ID "Clang")
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
   "PTEX_STATIC"
-  "PTEX_VER=\"v2.1.33-4-g4cd8e9a (4cd8e9a6db2b06e478dfbbd8c26eb6df97f84483)\""
+  "PTEX_VER=\" ()\""
   )
 
 # The include file search paths:

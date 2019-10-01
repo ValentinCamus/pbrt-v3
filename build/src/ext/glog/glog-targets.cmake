@@ -50,11 +50,11 @@ set_target_properties(glog PROPERTIES
   INTERFACE_INCLUDE_DIRECTORIES "/Users/valentin/Desktop/Workspace/pbrt/build/src/ext/glog;/Users/valentin/Desktop/Workspace/pbrt/src/ext/glog/src"
 )
 
-# Import target "glog" for configuration "Debug"
-set_property(TARGET glog APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
+# Import target "glog" for configuration "Release"
+set_property(TARGET glog APPEND PROPERTY IMPORTED_CONFIGURATIONS RELEASE)
 set_target_properties(glog PROPERTIES
-  IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LOCATION_DEBUG "/Users/valentin/Desktop/Workspace/pbrt/build/src/ext/glog/libglog.a"
+  IMPORTED_LINK_INTERFACE_LANGUAGES_RELEASE "CXX"
+  IMPORTED_LOCATION_RELEASE "/Users/valentin/Desktop/Workspace/pbrt/build/src/ext/glog/libglog.a"
   )
 
 # This file does not depend on other imported targets which have

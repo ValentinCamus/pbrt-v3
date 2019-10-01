@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.13.2/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /usr/local/Cellar/cmake/3.13.2/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /Users/valentin/Desktop/Workspace/pbrt/build
 include src/ext/ptex/CMakeFiles/ExperimentalCoverage.dir/progress.make
 
 src/ext/ptex/CMakeFiles/ExperimentalCoverage:
-	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/ptex && /Applications/CLion.app/Contents/bin/cmake/mac/bin/ctest -D ExperimentalCoverage
+	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/ptex && /usr/local/Cellar/cmake/3.13.2/bin/ctest -D ExperimentalCoverage
 
 ExperimentalCoverage: src/ext/ptex/CMakeFiles/ExperimentalCoverage
 ExperimentalCoverage: src/ext/ptex/CMakeFiles/ExperimentalCoverage.dir/build.make

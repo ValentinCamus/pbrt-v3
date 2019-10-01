@@ -34,10 +34,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.13.2/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /usr/local/Cellar/cmake/3.13.2/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -54,10 +54,10 @@ CMAKE_BINARY_DIR = /Users/valentin/Desktop/Workspace/pbrt/build
 include src/ext/openexr/CMakeFiles/CopyIlmBaseLibs.dir/progress.make
 
 src/ext/openexr/CMakeFiles/CopyIlmBaseLibs:
-	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E copy_directory /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/IlmBase/Half/ /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/OpenEXR/IlmImf/
-	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E copy_directory /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/IlmBase/IlmThread/ /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/OpenEXR/IlmImf/
-	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E copy_directory /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/IlmBase/Iex/ /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/OpenEXR/IlmImf/
-	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E copy_directory /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/IlmBase/Imath/ /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/OpenEXR/IlmImf/
+	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr && /usr/local/Cellar/cmake/3.13.2/bin/cmake -E copy_directory /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/IlmBase/Half/ /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/OpenEXR/IlmImf/
+	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr && /usr/local/Cellar/cmake/3.13.2/bin/cmake -E copy_directory /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/IlmBase/IlmThread/ /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/OpenEXR/IlmImf/
+	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr && /usr/local/Cellar/cmake/3.13.2/bin/cmake -E copy_directory /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/IlmBase/Iex/ /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/OpenEXR/IlmImf/
+	cd /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr && /usr/local/Cellar/cmake/3.13.2/bin/cmake -E copy_directory /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/IlmBase/Imath/ /Users/valentin/Desktop/Workspace/pbrt/build/src/ext/openexr/OpenEXR/IlmImf/
 
 CopyIlmBaseLibs: src/ext/openexr/CMakeFiles/CopyIlmBaseLibs
 CopyIlmBaseLibs: src/ext/openexr/CMakeFiles/CopyIlmBaseLibs.dir/build.make
