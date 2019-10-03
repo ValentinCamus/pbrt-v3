@@ -108,11 +108,14 @@ Float Statistics::Sampling(const Pixel &statsPixel) const {
 
 Spectrum Statistics::Variance(const Pixel &statsPixel) const {
     // No-biased variance
-    return (statsPixel.samples > 1) ? statsPixel.moment2 / statsPixel.samples : 0;
+    return (statsPixel.samples > 1) ? statsPixel.moment2 / statsPixel.samples : Spectrum(0);
 }
 
 Spectrum Statistics::Error(const Pixel &statsPixel) const {
-    return 0;
+
+    Spectrum denom = statsPixel.mean * sqrt(statsPixel.samples);
+    for (int i = 0; i < Spectrum::nSamples; ++i) denom[i] = std::max(denom[i], Pi);
+    return statsPixel.moment2 / denom;
 }
 
 bool Statistics::StopCriterion(Point2i pixel) const {
