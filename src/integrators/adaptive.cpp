@@ -77,6 +77,20 @@ void Statistics::SamplingLoop(Point2i pixel, const SamplingFunctor &sampleOnce){
         UpdateStats(pixel, sampleOnce());
     };
 
+    /* Switch:
+     *      case Mode_NORMAL:
+     *          for(0..maxSamples)
+     *              loop();
+     *      case Mode_ERROR:
+     *          for (0..minSamples)
+     *              loop();
+     *          while(! StopCriterion())
+     *              loop();
+     *      case Mode_TIME:
+     *          for (0..BatchSize())
+     *              loop();
+     */
+
     switch (mode) {
     default:
         for (long i = 0; i < maxSamples; ++i)
@@ -112,10 +126,21 @@ Spectrum Statistics::Variance(const Pixel &statsPixel) const {
 }
 
 Spectrum Statistics::Error(const Pixel &statsPixel) const {
+    Spectrum variance = Sqrt(Variance(statsPixel) / statsPixel.samples);
+    Spectrum sigma = variance / sqrt(statsPixel.samples);
 
-    Spectrum denom = statsPixel.mean * sqrt(statsPixel.samples);
-    for (int i = 0; i < Spectrum::nSamples; ++i) denom[i] = std::max(denom[i], Pi);
-    return statsPixel.moment2 / denom;
+    Spectrum mean = statsPixel.mean;
+    constexpr Float EPSILON = 0.005f;
+    for (unsigned int i = 0; i < Spectrum::nSamples; ++i)
+    {
+        mean[i] = mean[i] > EPSILON ? mean[i] : EPSILON;
+    }
+
+    return sigma / mean;
+
+    // Spectrum denom = statsPixel.mean * sqrt(statsPixel.samples) * statsPixel.samples;
+    // for (int i = 0; i < Spectrum::nSamples; ++i) denom[i] = std::max(denom[i], Pi);
+    // return statsPixel.moment2 / denom;
 }
 
 bool Statistics::StopCriterion(Point2i pixel) const {
