@@ -58,7 +58,11 @@ void Statistics::WriteImages() const {
 }
 
 bool Statistics::StartNextBatch(int number) {
-    switch (mode) {
+    switch (mode)
+    {
+    case Mode::TIME:
+        return ElapsedMilliseconds() < (targetSeconds * 1000) && (number * batchSize) < maxSamples;
+
     default:
         if (batchOnce) {
             batchOnce = false;
@@ -77,25 +81,33 @@ void Statistics::SamplingLoop(Point2i pixel, const SamplingFunctor &sampleOnce){
         UpdateStats(pixel, sampleOnce());
     };
 
-    /* Switch:
-     *      case Mode_NORMAL:
-     *          for(0..maxSamples)
-     *              loop();
-     *      case Mode_ERROR:
-     *          for (0..minSamples)
-     *              loop();
-     *          while(! StopCriterion())
-     *              loop();
-     *      case Mode_TIME:
-     *          for (0..BatchSize())
-     *              loop();
-     */
+    switch (mode)
+    {
+        case Mode::NORMAL:
+        {
+            for (long i = 0; i < maxSamples; ++i)
+                loop();
+            break;
+        }
+        case Mode::ERROR:
+        {
+            long i = 0;
+            for (; i < minSamples; ++i)
+                loop();
 
-    switch (mode) {
-    default:
-        for (long i = 0; i < maxSamples; ++i)
-            loop();
-        break;
+            while (!StopCriterion(pixel) && i < maxSamples)
+            {
+                ++i;
+                loop();
+            }
+            break;
+        }
+        case Mode::TIME:
+        {
+            for (long i = 0; i < BatchSize() && i < maxSamples; ++i)
+                loop();
+            break;
+        }
     }
 }
 
@@ -117,30 +129,41 @@ void Statistics::UpdateStats(Point2i pixel, Spectrum &&L) {
 }
 
 Float Statistics::Sampling(const Pixel &statsPixel) const {
-    return static_cast<Float>(statsPixel.samples);
+    return Float(statsPixel.samples - minSamples) / Float(maxSamples);
 }
 
 Spectrum Statistics::Variance(const Pixel &statsPixel) const {
-    // No-biased variance
-    return (statsPixel.samples > 1) ? statsPixel.moment2 / statsPixel.samples : Spectrum(0);
+    return (statsPixel.samples > 1) ? statsPixel.moment2 / (statsPixel.samples - 1) : Spectrum(0);
 }
 
 Spectrum Statistics::Error(const Pixel &statsPixel) const {
-    Spectrum variance = Sqrt(Variance(statsPixel) / statsPixel.samples);
-    Spectrum sigma = variance / sqrt(statsPixel.samples);
+
+    static bool bIsErrorStandard = (errorHeuristic == "standard");
+    static bool bIsErrorRelative = (errorHeuristic == "relative");
 
     Spectrum mean = statsPixel.mean;
-    constexpr Float EPSILON = 0.005f;
-    for (unsigned int i = 0; i < Spectrum::nSamples; ++i)
+    Spectrum sigma = Sqrt(statsPixel.moment2 / std::pow(statsPixel.samples, 2));
+
+//    for (int i = 0; i < Spectrum::nSamples; ++i)
+//        if (mean[i] == 0.0) return Spectrum(0);
+
+    if (bIsErrorRelative)
     {
-        mean[i] = mean[i] > EPSILON ? mean[i] : EPSILON;
+        return sigma;
     }
+    else if (bIsErrorStandard)
+    {
+        constexpr Float EPSILON = 0.5f;
+        for (int i = 0; i < Spectrum::nSamples; ++i)
+            mean[i] = mean[i] > EPSILON ? mean[i] : EPSILON;
 
-    return sigma / mean;
-
-    // Spectrum denom = statsPixel.mean * sqrt(statsPixel.samples) * statsPixel.samples;
-    // for (int i = 0; i < Spectrum::nSamples; ++i) denom[i] = std::max(denom[i], Pi);
-    // return statsPixel.moment2 / denom;
+        return sigma / mean;
+    }
+    else
+    {
+        LOG(ERROR) << "Undefined error heuristic";
+        return Spectrum(0);
+    }
 }
 
 bool Statistics::StopCriterion(Point2i pixel) const {
@@ -149,8 +172,8 @@ bool Statistics::StopCriterion(Point2i pixel) const {
     const Pixel &statsPixel = GetPixel(pixel);
 
     // Control approximation error
-
-    return true;
+    Spectrum error = Error(statsPixel);
+    return error[0] < errorThreshold || error[1] < errorThreshold || error[2] < errorThreshold;
 }
 
 long Statistics::ElapsedMilliseconds() const {

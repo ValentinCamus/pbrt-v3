@@ -10,11 +10,11 @@ PixelFilter "triangle"
     "float ywidth" 1
 
 Integrator "volpathadaptive"
-    "string mode" "normal"
+    "string mode" "error"
     "integer batchsize" 8
     "integer targetseconds" 30
     "float errorthreshold" 0.01
-    "string errorheuristic" "relative"
+    "string errorheuristic" "standard"
     "integer minsamples" 16
 
 Sampler "halton" "integer pixelsamples" 32
