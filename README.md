@@ -1,12 +1,3 @@
-EIING3D1 - TP Échantillonnage adaptatif
----------------------------------------
-
-Assurez-vous de compiler la cible `pbrt_exe` en mode `-DCMAKE_BUILD_TYPE=Release`.
-Le TP se concentre sur `integrators/adaptive.*`.
-Pour l'évaluation, une archive ZIP est attendue contenant `adaptive.h` et `adaptive.cpp`, votre rapport au format PDF et un ensemble d'images illustrant le travail.
-Des scènes simples sont proposées dans l'archive, d'autres sont disponibles en téléchargement : [pbrt.org](https://pbrt.org/scenes-v3.html) ou [benedikt-bitterli.me](https://benedikt-bitterli.me/resources/) (vous devrez dans ce cas changer l'intégrateur dans le fichier `.pbrt`, cf. [documentation](https://pbrt.org/fileformat-v3.html\#integrators)).
-Attention, il est préférable de commencer sur des images de petite taille et avec peu d'échantillons !
-
 pbrt, Version 3
 ===============
 
