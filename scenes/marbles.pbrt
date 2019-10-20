@@ -14,7 +14,7 @@ Integrator "volpathadaptive"
     "integer batchsize" 8
     "integer targetseconds" 30
     "float errorthreshold" 0.01
-    "string errorheuristic" "standard"
+    "string errorheuristic" "relative"
     "integer minsamples" 16
 
 Sampler "halton" "integer pixelsamples" 32
